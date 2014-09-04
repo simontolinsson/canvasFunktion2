@@ -1,0 +1,38 @@
+<html>
+    <head>
+    
+    </head>
+    <body>
+    <canvas id="duken" width="1000" height="600"></canvas>
+        <script>
+            var c = document.getElementById("duken")
+            var ctx = c.getContext("2d")
+        
+            //En orange cirkel
+            function blackCircle(x, y, r){
+            ctx.fillStyle = "rgb(0, 0, 0)";
+            ctx.strokeStyle = "rgb(0, 0, 0)";
+            ctx.lineWidth=2;
+            ctx.beginPath();
+            ctx.arc(x, y, r, 0, 2*Math.PI);
+            ctx.fill();
+            ctx.stroke();
+            }
+            
+            //Cirkeln med armar + ben   
+            function oldMan(x, y){
+                blackCircle(x, y, 40);
+            
+                ctx.fillRect(x - 10, y + 35, 20, 100);        
+                ctx.fillRect(x - 50, y + 50, 100, 20);
+                ctx.fillRect(x + 5, y + 120, 20, 100);
+                ctx.fillRect(x - 25, y + 120, 20, 100)
+                }
+        
+            oldMan(550, 200);
+            oldMan(700, 200);
+            oldMan(400, 200);
+        
+        </script>
+      </body>
+</html>
